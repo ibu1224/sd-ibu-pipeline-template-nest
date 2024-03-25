@@ -1,7 +1,15 @@
 namespace: ibu-test
-name: sd-ibu-pipeline-template-nest
+name: sd-ibu-pipeline-template
 version: '1.0.0'
 description: An example pipeline template for testing node.js files
 maintainer: foo@bar.com
 config:
-  template: ibu-test/sd-ibu-pipeline-template@latest
+  shared:
+    image: node:20
+  jobs:
+    main:
+      requires: [ ~commit ]
+      steps:
+        - name: echo "pipeline template test"
+        - env
+        - export
